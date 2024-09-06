@@ -318,7 +318,7 @@ cat > "${config_dir}" << EOF
       "enabled": true,
       "path": "$work_dir/cache.db",
       "cache_id": "mycacheid",
-      "store_fakeip": true
+      "store_fakeip": false
     }
   }
 }
