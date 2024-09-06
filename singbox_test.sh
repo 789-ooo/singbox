@@ -252,6 +252,7 @@ cat > "${config_dir}" << EOF
         "type": "hysteria2",
         "listen": "::",
         "listen_port": $hy2_port,
+	"tcp_fast_open": true,
         "sniff": false,
         "sniff_override_destination": false,
         "users": [
@@ -261,10 +262,6 @@ cat > "${config_dir}" << EOF
         ],
         "ignore_client_bandwidth":false,
         "masquerade": "https://bing.com",
-        "obfs": {
-            "type": "salamander",
-            "password": "kcptun"
-        },
         "tls": {
             "enabled": true,
             "alpn": [
@@ -282,6 +279,7 @@ cat > "${config_dir}" << EOF
         "type": "tuic",
         "listen": "::",
         "listen_port": $tuic_port,
+	"tcp_fast_open": true,
 	"sniff": false,
 	"sniff_override_destination": false,
         "users": [
