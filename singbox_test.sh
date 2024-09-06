@@ -261,6 +261,10 @@ cat > "${config_dir}" << EOF
         ],
         "ignore_client_bandwidth":false,
         "masquerade": "https://bing.com",
+        "obfs": {
+            "type": "salamander",
+            "password": "kcptun"
+        },
         "tls": {
             "enabled": true,
             "alpn": [
@@ -285,9 +289,7 @@ cat > "${config_dir}" << EOF
           }
         ],
         "congestion_control": "bbr",
-        "auth_timeout": "1s"，
-        "heartbeat": "9s",
-        "zero_rtt_handshake": true,
+	"zero_rtt_handshake": true,
         "tls": {
             "enabled": true,
             "alpn": [
@@ -316,7 +318,7 @@ cat > "${config_dir}" << EOF
       "enabled": true,
       "path": "$work_dir/cache.db",
       "cache_id": "mycacheid",
-      "store_fakeip": true
+      "store_fakeip": false
     }
   }
 }
