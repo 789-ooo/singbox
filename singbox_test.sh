@@ -291,7 +291,7 @@ cat > "${config_dir}" << EOF
           }
         ],
         "congestion_control": "bbr",
-	"zero_rtt_handshake": true,
+	"zero_rtt_handshake": false,
         "tls": {
             "enabled": true,
             "alpn": [
