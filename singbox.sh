@@ -209,6 +209,10 @@ cat > "${config_dir}" << EOF
         "type": "vless",
         "listen": "::",
         "listen_port": $vless_port,
+        "sniff": false,
+        "sniff_override_destination": false,
+	"tcp_fast_open": true,
+        "tcp_multi_path": true,
         "users": [
             {
               "uuid": "$uuid",
@@ -252,8 +256,10 @@ cat > "${config_dir}" << EOF
         "type": "hysteria2",
         "listen": "::",
         "listen_port": $hy2_port,
-        "sniff": true,
+        "sniff": false,
         "sniff_override_destination": false,
+	"tcp_fast_open": true,
+        "tcp_multi_path": true,
         "users": [
             {
                 "password": "$uuid"
@@ -278,13 +284,18 @@ cat > "${config_dir}" << EOF
         "type": "tuic",
         "listen": "::",
         "listen_port": $tuic_port,
+        "sniff": false,
+        "sniff_override_destination": false,
+	"tcp_fast_open": true,
+        "tcp_multi_path": true,
         "users": [
           {
             "uuid": "$uuid",
-            "password": "$password"
+            "password": "kcptun"
           }
         ],
         "congestion_control": "bbr",
+	"zero_rtt_handshake": false,
         "tls": {
             "enabled": true,
             "alpn": [
