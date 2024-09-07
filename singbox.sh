@@ -209,6 +209,10 @@ cat > "${config_dir}" << EOF
         "type": "vless",
         "listen": "::",
         "listen_port": $vless_port,
+	"sniff": false,
+        "sniff_override_destination": false,
+	"tcp_fast_open": true,
+        "tcp_multi_path": true,
         "users": [
             {
               "uuid": "$uuid",
@@ -224,7 +228,7 @@ cat > "${config_dir}" << EOF
                     "server": "www.iij.ad.jp",
                     "server_port": 443
                 },
-                "private_key": "kcptun",
+                "private_key": "$private_key",
                 "short_id": [
                   ""
                 ]
@@ -236,6 +240,10 @@ cat > "${config_dir}" << EOF
         "type": "vmess",
         "listen": "::",
         "listen_port": 8001,
+	"sniff": false,
+        "sniff_override_destination": false,
+	"tcp_fast_open": true,
+        "tcp_multi_path": true,
         "users": [
         {
             "uuid": "$uuid"
