@@ -228,7 +228,7 @@ cat > "${config_dir}" << EOF
                     "server": "www.iij.ad.jp",
                     "server_port": 443
                 },
-                "private_key": "$private_key",
+                "private_key": "$kcptun",
                 "short_id": [
                   ""
                 ]
