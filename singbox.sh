@@ -211,8 +211,6 @@ cat > "${config_dir}" << EOF
         "listen_port": $vless_port,
         "sniff": false,
         "sniff_override_destination": false,
-	"tcp_fast_open": true,
-        "tcp_multi_path": true,
         "users": [
             {
               "uuid": "$uuid",
