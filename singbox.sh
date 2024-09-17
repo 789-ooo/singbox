@@ -199,7 +199,7 @@ cat > "${config_dir}" << EOF
     "servers": [
       {
         "tag": "Google",
-        "address": "tls://8.8.8.8"
+        "address": "h3://8.8.8.8/dns-query"
       }
     ]
   },
@@ -209,8 +209,8 @@ cat > "${config_dir}" << EOF
         "type": "vless",
         "listen": "::",
         "listen_port": $vless_port,
-	"sniff": false,
-        "sniff_override_destination": false,
+	"sniff": true,
+        "sniff_override_destination": true,
 	"tcp_fast_open": false,
         "tcp_multi_path": true,
         "users": [
@@ -288,8 +288,8 @@ cat > "${config_dir}" << EOF
         "type": "tuic",
         "listen": "::",
         "listen_port": $tuic_port,
-        "sniff": true,
-        "sniff_override_destination": true,
+        "sniff": false,
+        "sniff_override_destination": false,
 	"tcp_fast_open": false,
         "tcp_multi_path": true,
         "users": [
