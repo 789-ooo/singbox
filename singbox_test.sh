@@ -248,20 +248,21 @@ cat > "${config_dir}" << EOF
         }
     },
     {
-        "tag": "hysteria2",
+        "tag": "hysteria-5353",
         "type": "hysteria2",
         "listen": "::",
-        "listen_port": $hy2_port,
-	"tcp_fast_open": true,
+        "listen_port": 5353,
         "sniff": false,
         "sniff_override_destination": false,
+	"tcp_fast_open": false,
+        "tcp_multi_path": true,
         "users": [
             {
-                "password": "$uuid"
+                "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
             }
         ],
         "ignore_client_bandwidth":false,
-        "masquerade": "https://bing.com",
+        "masquerade": "https://apple.com",
         "tls": {
             "enabled": true,
             "alpn": [
@@ -269,23 +270,24 @@ cat > "${config_dir}" << EOF
             ],
             "min_version":"1.3",
             "max_version":"1.3",
-            "certificate_path": "$work_dir/cert.pem",
-            "key_path": "$work_dir/private.key"
+            "certificate_path": "/etc/sing-box/cert.pem",
+            "key_path": "/etc/sing-box/private.key"
         }
 
     },
     {
-        "tag": "tuic",
+        "tag": "tuic-53",
         "type": "tuic",
         "listen": "::",
-        "listen_port": $tuic_port,
-	"tcp_fast_open": true,
-	"sniff": false,
-	"sniff_override_destination": false,
+        "listen_port": 53,
+        "sniff": false,
+        "sniff_override_destination": false,
+	"tcp_fast_open": false,
+        "tcp_multi_path": true,
         "users": [
           {
-            "uuid": "$uuid",
-            "password": "$password"
+            "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
+            "password": "kcptun"
           }
         ],
         "congestion_control": "bbr",
@@ -295,10 +297,144 @@ cat > "${config_dir}" << EOF
             "alpn": [
                 "h3"
             ],
-        "certificate_path": "$work_dir/cert.pem",
-        "key_path": "$work_dir/private.key"
+        "certificate_path": "/etc/sing-box/cert.pem",
+        "key_path": "/etc/sing-box/private.key"
+       }
+    },
+    {
+        "tag": "vmess-3",
+        "type": "vmess",
+        "listen": "::",
+        "listen_port": 8003,
+	"sniff": false,
+        "sniff_override_destination": false,
+	"tcp_fast_open": false,
+        "tcp_multi_path": true,
+        "users": [
+        {
+            "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
+        }
+    ],
+    "transport": {
+        "type": "ws",
+        "path": "/vmess",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+        }
+    },
+
+    {
+        "tag": "hysteria-53535",
+        "type": "hysteria2",
+        "listen": "::",
+        "listen_port": 53535,
+        "sniff": true,
+        "sniff_override_destination": true,
+	"tcp_fast_open": false,
+        "tcp_multi_path": true,
+        "users": [
+            {
+                "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
+            }
+        ],
+        "ignore_client_bandwidth":false,
+        "masquerade": "https://apple.com",
+        "tls": {
+            "enabled": true,
+            "alpn": [
+                "h3"
+            ],
+            "min_version":"1.3",
+            "max_version":"1.3",
+            "certificate_path": "/etc/sing-box/cert.pem",
+            "key_path": "/etc/sing-box/private.key"
+        }
+
+    },
+    {
+        "tag": "tuic-535",
+        "type": "tuic",
+        "listen": "::",
+        "listen_port": 535,
+        "sniff": false,
+        "sniff_override_destination": false,
+	"tcp_fast_open": false,
+        "tcp_multi_path": true,
+        "users": [
+          {
+            "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
+            "password": "kcptun"
+          }
+        ],
+        "congestion_control": "bbr",
+	"zero_rtt_handshake": false,
+        "tls": {
+            "enabled": true,
+            "alpn": [
+                "h3"
+            ],
+        "certificate_path": "/etc/sing-box/cert.pem",
+        "key_path": "/etc/sing-box/private.key"
+       }
+    },
+    {
+        "tag": "hysteria-UDP",
+        "type": "hysteria2",
+        "listen": "::",
+        "listen_port": 8443,
+        "sniff": false,
+        "sniff_override_destination": false,
+	"tcp_fast_open": false,
+        "tcp_multi_path": true,
+        "users": [
+            {
+                "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
+            }
+        ],
+	"obfs": {
+        "type": "salamander",
+        "password": "kcptun"
+        },
+        "ignore_client_bandwidth":false,
+        "masquerade": "https://apple.com",
+        "tls": {
+            "enabled": true,
+            "alpn": [
+                "h3"
+            ],
+            "min_version":"1.3",
+            "max_version":"1.3",
+            "certificate_path": "/etc/sing-box/cert.pem",
+            "key_path": "/etc/sing-box/private.key"
+        }
+
+    },
+    {
+        "tag": "tuic-UDP",
+        "type": "tuic",
+        "listen": "::",
+        "listen_port": 853,
+        "sniff": false,
+        "sniff_override_destination": false,
+	"tcp_fast_open": false,
+        "tcp_multi_path": true,
+        "users": [
+          {
+            "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
+            "password": "kcptun"
+          }
+        ],
+        "congestion_control": "bbr",
+	"zero_rtt_handshake": false,
+        "tls": {
+            "enabled": true,
+            "alpn": [
+                "h3"
+            ],
+        "certificate_path": "/etc/sing-box/cert.pem",
+        "key_path": "/etc/sing-box/private.key"
        }
     }
+
   ],
   "outbounds": [
 
