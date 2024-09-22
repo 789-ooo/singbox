@@ -208,10 +208,14 @@ cat > "${config_dir}" << EOF
         "tag": "vless-reality-vesion",
         "type": "vless",
         "listen": "::",
-        "listen_port": $vless_port,
+        "listen_port": 55116,
+	"sniff": true,
+        "sniff_override_destination": true,
+	"tcp_fast_open": false,
+        "tcp_multi_path": true,
         "users": [
             {
-              "uuid": "$uuid",
+              "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
               "flow": "xtls-rprx-vision"
             }
         ],
@@ -224,7 +228,7 @@ cat > "${config_dir}" << EOF
                     "server": "www.iij.ad.jp",
                     "server_port": 443
                 },
-                "private_key": "$private_key",
+                "private_key": "cDoVuGFB7QLSg5Ww85ugFTDn1SagbgnIP7Urj0hZtF4",
                 "short_id": [
                   ""
                 ]
@@ -236,9 +240,13 @@ cat > "${config_dir}" << EOF
         "type": "vmess",
         "listen": "::",
         "listen_port": 8001,
+	"sniff": true,
+        "sniff_override_destination": true,
+	"tcp_fast_open": false,
+        "tcp_multi_path": true,
         "users": [
         {
-            "uuid": "$uuid"
+            "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
         }
     ],
     "transport": {
@@ -247,6 +255,27 @@ cat > "${config_dir}" << EOF
         "early_data_header_name": "Sec-WebSocket-Protocol"
         }
     },
+    {
+        "tag": "vmess-3",
+        "type": "vmess",
+        "listen": "::",
+        "listen_port": 8003,
+	"sniff": false,
+        "sniff_override_destination": false,
+	"tcp_fast_open": false,
+        "tcp_multi_path": true,
+        "users": [
+        {
+            "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
+        }
+    ],
+    "transport": {
+        "type": "ws",
+        "path": "/vmess",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+        }
+    },
+
     {
         "tag": "hysteria-5353",
         "type": "hysteria2",
@@ -301,27 +330,6 @@ cat > "${config_dir}" << EOF
         "key_path": "/etc/sing-box/private.key"
        }
     },
-    {
-        "tag": "vmess-3",
-        "type": "vmess",
-        "listen": "::",
-        "listen_port": 8003,
-	"sniff": false,
-        "sniff_override_destination": false,
-	"tcp_fast_open": false,
-        "tcp_multi_path": true,
-        "users": [
-        {
-            "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
-        }
-    ],
-    "transport": {
-        "type": "ws",
-        "path": "/vmess",
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-        }
-    },
-
     {
         "tag": "hysteria-53535",
         "type": "hysteria2",
@@ -390,7 +398,7 @@ cat > "${config_dir}" << EOF
                 "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
             }
         ],
-	"obfs": {
+        "obfs": {
         "type": "salamander",
         "password": "kcptun"
         },
@@ -434,6 +442,8 @@ cat > "${config_dir}" << EOF
         "key_path": "/etc/sing-box/private.key"
        }
     }
+
+  ],
 
   ],
   "outbounds": [
