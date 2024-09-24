@@ -240,8 +240,8 @@ cat > "${config_dir}" << EOF
         "type": "vmess",
         "listen": "::",
         "listen_port": 8001,
-	"sniff": true,
-        "sniff_override_destination": true,
+	"sniff": false,
+        "sniff_override_destination": false,
 	"tcp_fast_open": false,
         "tcp_multi_path": true,
         "users": [
@@ -260,8 +260,8 @@ cat > "${config_dir}" << EOF
         "type": "vmess",
         "listen": "::",
         "listen_port": 8003,
-	"sniff": false,
-        "sniff_override_destination": false,
+	"sniff": true,
+        "sniff_override_destination": true,
 	"tcp_fast_open": false,
         "tcp_multi_path": true,
         "users": [
@@ -363,8 +363,8 @@ cat > "${config_dir}" << EOF
         "type": "tuic",
         "listen": "::",
         "listen_port": 535,
-        "sniff": false,
-        "sniff_override_destination": false,
+        "sniff": true,
+        "sniff_override_destination": true,
 	"tcp_fast_open": false,
         "tcp_multi_path": true,
         "users": [
