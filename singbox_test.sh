@@ -228,7 +228,7 @@ cat > "${config_dir}" << EOF
             "server": "apple.com",
             "server_port": 443
           },
-          "private_key": "cDoVuGFB7QLSg5Ww85ugFTDn1SagbgnIP7Urj0hZtF4",
+          "private_key": "$private_key",
           "short_id": [
             ""
           ]
@@ -529,7 +529,7 @@ cat > "${config_dir}" << EOF
         "certificate_path": "/etc/sing-box/cert.pem",
         "key_path": "/etc/sing-box/private.key"
       }
-    },
+    }
 
 
   ],
