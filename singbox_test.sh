@@ -509,6 +509,34 @@ cat > "${config_dir}" << EOF
       }
     },
     {
+      "tag": "tuic-cubic",
+      "type": "tuic",
+      "listen": "::",
+      "listen_port": 853,
+      "sniff": false,
+      "sniff_override_destination": false,
+      "tcp_fast_open": false,
+      "tcp_multi_path": true,
+      "users": [
+        {
+          "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+          "password": "kcptun"
+        }
+      ],
+      "congestion_control": "cubic",
+      "zero_rtt_handshake": true,
+      "tls": {
+        "enabled": true,
+        "alpn": [
+          "h3"
+        ],
+        "min_version": "1.3",
+        "max_version": "1.3",
+        "certificate_path": "/etc/sing-box/cert.pem",
+        "key_path": "/etc/sing-box/private.key"
+      }
+    },
+    {
       "tag": "tuic-zero-rtt",
       "type": "tuic",
       "listen": "::",
@@ -541,7 +569,7 @@ cat > "${config_dir}" << EOF
       "type": "shadowsocks",
       "tag": "ss-in",
       "listen": "::",
-      "listen_port": 33333,
+      "listen_port": 11111,
       "sniff": false,
       "sniff_override_destination": false,
       "tcp_fast_open": false,
@@ -557,7 +585,29 @@ cat > "${config_dir}" << EOF
           "down_mbps": 72
         }
       }
+    },
+    {
+      "type": "shadowsocks-dns",
+      "tag": "ss-in",
+      "listen": "::",
+      "listen_port": 33333,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "tcp_fast_open": false,
+      "tcp_multi_path": true,
+      "method": "aes-128-gcm",
+      "password": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "multiplex": {
+        "enabled": true,
+        "padding": false,
+        "brutal": {
+          "enabled": false,
+          "up_mbps": 72,
+          "down_mbps": 72
+        }
+      }
     }
+
 
 
 
