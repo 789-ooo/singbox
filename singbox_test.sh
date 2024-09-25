@@ -228,7 +228,7 @@ cat > "${config_dir}" << EOF
             "server": "apple.com",
             "server_port": 443
           },
-          "private_key": "$private_key",
+          "private_key": "cDoVuGFB7QLSg5Ww85ugFTDn1SagbgnIP7Urj0hZtF4",
           "short_id": [
             ""
           ]
@@ -259,13 +259,16 @@ cat > "${config_dir}" << EOF
             "server": "apple.com",
             "server_port": 443
           },
-          "private_key": "$private_key",
+          "private_key": "cDoVuGFB7QLSg5Ww85ugFTDn1SagbgnIP7Urj0hZtF4",
           "short_id": [
             ""
           ]
         }
       }
     },
+
+
+
     {
       "tag": "vmess",
       "type": "vmess",
@@ -326,6 +329,9 @@ cat > "${config_dir}" << EOF
         "early_data_header_name": "Sec-WebSocket-Protocol"
       }
     },
+
+
+
     {
       "tag": "hysteria",
       "type": "hysteria2",
@@ -380,6 +386,71 @@ cat > "${config_dir}" << EOF
         "key_path": "/etc/sing-box/private.key"
       }
     },
+    {
+      "tag": "hysteria-UDP",
+      "type": "hysteria2",
+      "listen": "::",
+      "listen_port": 8443,
+      "sniff": false,
+      "sniff_override_destination": false,
+      "tcp_fast_open": false,
+      "tcp_multi_path": true,
+      "users": [
+        {
+          "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
+        }
+      ],
+      "obfs": {
+        "type": "salamander",
+        "password": "kcptun"
+      },
+      "ignore_client_bandwidth": false,
+      "masquerade": "https://apple.com",
+      "tls": {
+        "enabled": true,
+        "alpn": [
+          "h3"
+        ],
+        "min_version": "1.3",
+        "max_version": "1.3",
+        "certificate_path": "/etc/sing-box/cert.pem",
+        "key_path": "/etc/sing-box/private.key"
+      }
+    },
+
+    {
+      "tag": "hysteria-warp",
+      "type": "hysteria2",
+      "listen": "::",
+      "listen_port": 7844,
+      "sniff": false,
+      "sniff_override_destination": false,
+      "tcp_fast_open": false,
+      "tcp_multi_path": true,
+      "users": [
+        {
+          "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
+        }
+      ],
+      "obfs": {
+        "type": "salamander",
+        "password": "kcptun"
+      },
+      "ignore_client_bandwidth": false,
+      "masquerade": "https://apple.com",
+      "tls": {
+        "enabled": true,
+        "alpn": [
+          "h3"
+        ],
+        "min_version": "1.3",
+        "max_version": "1.3",
+        "certificate_path": "/etc/sing-box/cert.pem",
+        "key_path": "/etc/sing-box/private.key"
+      }
+    },
+
+
 
     {
       "tag": "tuic",
@@ -434,7 +505,7 @@ cat > "${config_dir}" << EOF
       }
     },
     {
-      "tag": "tuic-zero",
+      "tag": "tuic-zero-rtt",
       "type": "tuic",
       "listen": "::",
       "listen_port": 853,
@@ -459,37 +530,8 @@ cat > "${config_dir}" << EOF
         "key_path": "/etc/sing-box/private.key"
       }
     },
-    {
-      "tag": "hysteria-warp",
-      "type": "hysteria2",
-      "listen": "::",
-      "listen_port": 7844,
-      "sniff": false,
-      "sniff_override_destination": false,
-      "tcp_fast_open": false,
-      "tcp_multi_path": true,
-      "users": [
-        {
-          "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
-        }
-      ],
-      "obfs": {
-        "type": "salamander",
-        "password": "kcptun"
-      },
-      "ignore_client_bandwidth": false,
-      "masquerade": "https://apple.com",
-      "tls": {
-        "enabled": true,
-        "alpn": [
-          "h3"
-        ],
-        "min_version": "1.3",
-        "max_version": "1.3",
-        "certificate_path": "/etc/sing-box/cert.pem",
-        "key_path": "/etc/sing-box/private.key"
-      }
-    }
+
+
   ],
   "outbounds": [
     {
