@@ -535,7 +535,31 @@ cat > "${config_dir}" << EOF
         "certificate_path": "/etc/sing-box/cert.pem",
         "key_path": "/etc/sing-box/private.key"
       }
+    },
+    
+    {
+      "type": "shadowsocks",
+      "tag": "ss-in",
+      "listen": "::",
+      "listen_port": 33333,
+      "sniff": false,
+      "sniff_override_destination": false,
+      "tcp_fast_open": false,
+      "tcp_multi_path": true,
+      "method": "aes-128-gcm",
+      "password": "kcptun",
+      "multiplex": {
+        "enabled": true,
+        "padding": false,
+        "brutal": {
+          "enabled": false,
+          "up_mbps": 72,
+          "down_mbps": 72
+        }
+      }
     }
+
+
 
 
   ],
