@@ -547,7 +547,7 @@ cat > "${config_dir}" << EOF
       "tcp_fast_open": false,
       "tcp_multi_path": true,
       "method": "aes-128-gcm",
-      "password": "kcptun",
+      "password": "ffffffff-ffff-ffff-ffff-ffffffffffff",
       "multiplex": {
         "enabled": true,
         "padding": false,
