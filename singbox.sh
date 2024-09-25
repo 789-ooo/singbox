@@ -228,7 +228,7 @@ cat > "${config_dir}" << EOF
                     "server": "apple.com",
                     "server_port": 443
                 },
-                "private_key": "kcptun",
+                "private_key": "$private_key",
                 "short_id": [
                   ""
                 ]
