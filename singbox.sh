@@ -221,14 +221,14 @@ cat > "${config_dir}" << EOF
         ],
         "tls": {
             "enabled": true,
-            "server_name": "www.iij.ad.jp",
+            "server_name": "apple.com",
             "reality": {
                 "enabled": true,
                 "handshake": {
-                    "server": "www.iij.ad.jp",
+                    "server": "apple.com",
                     "server_port": 443
                 },
-                "private_key": "$private_key",
+                "private_key": "kcptun",
                 "short_id": [
                   ""
                 ]
