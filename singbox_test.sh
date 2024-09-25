@@ -215,7 +215,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": true,
       "users": [
         {
-          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
+          "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
           "flow": "xtls-rprx-vision"
         }
       ],
@@ -246,7 +246,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": true,
       "users": [
         {
-          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
+          "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
           "flow": "xtls-rprx-vision"
         }
       ],
@@ -280,7 +280,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": true,
       "users": [
         {
-          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
+          "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff"
         }
       ],
       "transport": {
@@ -300,7 +300,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": true,
       "users": [
         {
-          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
+          "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff"
         }
       ],
       "transport": {
@@ -320,7 +320,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": true,
       "users": [
         {
-          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
+          "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff"
         }
       ],
       "transport": {
@@ -343,7 +343,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": true,
       "users": [
         {
-          "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
+          "password": "ffffffff-ffff-ffff-ffff-ffffffffffff"
         }
       ],
       "ignore_client_bandwidth": false,
@@ -370,7 +370,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": true,
       "users": [
         {
-          "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
+          "password": "ffffffff-ffff-ffff-ffff-ffffffffffff"
         }
       ],
       "ignore_client_bandwidth": false,
@@ -397,7 +397,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": true,
       "users": [
         {
-          "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
+          "password": "ffffffff-ffff-ffff-ffff-ffffffffffff"
         }
       ],
       "obfs": {
@@ -429,7 +429,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": true,
       "users": [
         {
-          "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
+          "password": "ffffffff-ffff-ffff-ffff-ffffffffffff"
         }
       ],
       "obfs": {
@@ -463,7 +463,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": true,
       "users": [
         {
-          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
+          "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
           "password": "kcptun"
         }
       ],
@@ -489,7 +489,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": true,
       "users": [
         {
-          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
+          "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
           "password": "kcptun"
         }
       ],
@@ -515,7 +515,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": true,
       "users": [
         {
-          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
+          "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
           "password": "kcptun"
         }
       ],
