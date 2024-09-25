@@ -474,6 +474,8 @@ cat > "${config_dir}" << EOF
         "alpn": [
           "h3"
         ],
+        "min_version": "1.3",
+        "max_version": "1.3",
         "certificate_path": "/etc/sing-box/cert.pem",
         "key_path": "/etc/sing-box/private.key"
       }
@@ -500,6 +502,8 @@ cat > "${config_dir}" << EOF
         "alpn": [
           "h3"
         ],
+        "min_version": "1.3",
+        "max_version": "1.3",
         "certificate_path": "/etc/sing-box/cert.pem",
         "key_path": "/etc/sing-box/private.key"
       }
@@ -526,6 +530,8 @@ cat > "${config_dir}" << EOF
         "alpn": [
           "h3"
         ],
+        "min_version": "1.3",
+        "max_version": "1.3",
         "certificate_path": "/etc/sing-box/cert.pem",
         "key_path": "/etc/sing-box/private.key"
       }
