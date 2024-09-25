@@ -192,279 +192,368 @@ cat > "${config_dir}" << EOF
   "log": {
     "disabled": false,
     "level": "info",
-    "output": "$work_dir/sb.log",
+    "output": "/etc/sing-box/sb.log",
     "timestamp": true
   },
   "dns": {
     "servers": [
       {
-        "tag": "sandbox",
-        "address": "https://208.67.222.2/dns-query"
+        "tag": "Google",
+        "address": "h3://8.8.8.8/dns-query"
       }
     ]
   },
   "inbounds": [
     {
-        "tag": "vless-reality-vesion",
-        "type": "vless",
-        "listen": "::",
-        "listen_port": 55116,
-	"sniff": true,
-        "sniff_override_destination": true,
-	"tcp_fast_open": false,
-        "tcp_multi_path": true,
-        "users": [
-            {
-              "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
-              "flow": "xtls-rprx-vision"
-            }
-        ],
-        "tls": {
-            "enabled": true,
-            "server_name": "www.iij.ad.jp",
-            "reality": {
-                "enabled": true,
-                "handshake": {
-                    "server": "www.iij.ad.jp",
-                    "server_port": 443
-                },
-                "private_key": "$private_key",
-                "short_id": [
-                  ""
-                ]
-            }
+      "tag": "vless",
+      "type": "vless",
+      "listen": "::",
+      "listen_port": 2087,
+      "sniff": false,
+      "sniff_override_destination": false,
+      "tcp_fast_open": false,
+      "tcp_multi_path": true,
+      "users": [
+        {
+          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
+          "flow": "xtls-rprx-vision"
         }
+      ],
+      "tls": {
+        "enabled": true,
+        "server_name": "apple.com",
+        "reality": {
+          "enabled": true,
+          "handshake": {
+            "server": "apple.com",
+            "server_port": 443
+          },
+          "private_key": "cDoVuGFB7QLSg5Ww85ugFTDn1SagbgnIP7Urj0hZtF4",
+          "short_id": [
+            ""
+          ]
+        }
+      }
     },
     {
-        "tag": "vmess-ws",
-        "type": "vmess",
-        "listen": "::",
-        "listen_port": 8001,
-	"sniff": false,
-        "sniff_override_destination": false,
-	"tcp_fast_open": false,
-        "tcp_multi_path": true,
-        "users": [
+      "tag": "vless-DNS",
+      "type": "vless",
+      "listen": "::",
+      "listen_port": 2096,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "tcp_fast_open": false,
+      "tcp_multi_path": true,
+      "users": [
         {
-            "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
+          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
+          "flow": "xtls-rprx-vision"
         }
-    ],
-    "transport": {
+      ],
+      "tls": {
+        "enabled": true,
+        "server_name": "apple.com",
+        "reality": {
+          "enabled": true,
+          "handshake": {
+            "server": "apple.com",
+            "server_port": 443
+          },
+          "private_key": "cDoVuGFB7QLSg5Ww85ugFTDn1SagbgnIP7Urj0hZtF4",
+          "short_id": [
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "tag": "vmess",
+      "type": "vmess",
+      "listen": "::",
+      "listen_port": 8001,
+      "sniff": false,
+      "sniff_override_destination": false,
+      "tcp_fast_open": false,
+      "tcp_multi_path": true,
+      "users": [
+        {
+          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
+        }
+      ],
+      "transport": {
         "type": "ws",
         "path": "/vmess",
         "early_data_header_name": "Sec-WebSocket-Protocol"
-        }
+      }
     },
     {
-        "tag": "vmess-3",
-        "type": "vmess",
-        "listen": "::",
-        "listen_port": 8003,
-	"sniff": true,
-        "sniff_override_destination": true,
-	"tcp_fast_open": false,
-        "tcp_multi_path": true,
-        "users": [
+      "tag": "vmess-DNS",
+      "type": "vmess",
+      "listen": "::",
+      "listen_port": 8003,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "tcp_fast_open": false,
+      "tcp_multi_path": true,
+      "users": [
         {
-            "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
+          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
         }
-    ],
-    "transport": {
+      ],
+      "transport": {
         "type": "ws",
         "path": "/vmess",
         "early_data_header_name": "Sec-WebSocket-Protocol"
-        }
-    },
-
-    {
-        "tag": "hysteria-5353",
-        "type": "hysteria2",
-        "listen": "::",
-        "listen_port": 5353,
-        "sniff": false,
-        "sniff_override_destination": false,
-	"tcp_fast_open": false,
-        "tcp_multi_path": true,
-        "users": [
-            {
-                "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
-            }
-        ],
-        "ignore_client_bandwidth":false,
-        "masquerade": "https://apple.com",
-        "tls": {
-            "enabled": true,
-            "alpn": [
-                "h3"
-            ],
-            "min_version":"1.3",
-            "max_version":"1.3",
-            "certificate_path": "/etc/sing-box/cert.pem",
-            "key_path": "/etc/sing-box/private.key"
-        }
-
+      }
     },
     {
-        "tag": "tuic-53",
-        "type": "tuic",
-        "listen": "::",
-        "listen_port": 53,
-        "sniff": false,
-        "sniff_override_destination": false,
-	"tcp_fast_open": false,
-        "tcp_multi_path": true,
-        "users": [
-          {
-            "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
-            "password": "kcptun"
-          }
+      "tag": "vmess-warp",
+      "type": "vmess",
+      "listen": "::",
+      "listen_port": 8005,
+      "sniff": false,
+      "sniff_override_destination": false,
+      "tcp_fast_open": false,
+      "tcp_multi_path": true,
+      "users": [
+        {
+          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
+        }
+      ],
+      "transport": {
+        "type": "ws",
+        "path": "/vmess",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "tag": "hysteria",
+      "type": "hysteria2",
+      "listen": "::",
+      "listen_port": 5353,
+      "sniff": false,
+      "sniff_override_destination": false,
+      "tcp_fast_open": false,
+      "tcp_multi_path": true,
+      "users": [
+        {
+          "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
+        }
+      ],
+      "ignore_client_bandwidth": false,
+      "masquerade": "https://apple.com",
+      "tls": {
+        "enabled": true,
+        "alpn": [
+          "h3"
         ],
-        "congestion_control": "bbr",
-	"zero_rtt_handshake": false,
-        "tls": {
-            "enabled": true,
-            "alpn": [
-                "h3"
-            ],
+        "min_version": "1.3",
+        "max_version": "1.3",
         "certificate_path": "/etc/sing-box/cert.pem",
         "key_path": "/etc/sing-box/private.key"
-       }
+      }
     },
     {
-        "tag": "hysteria-53535",
-        "type": "hysteria2",
-        "listen": "::",
-        "listen_port": 53535,
-        "sniff": true,
-        "sniff_override_destination": true,
-	"tcp_fast_open": false,
-        "tcp_multi_path": true,
-        "users": [
-            {
-                "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
-            }
-        ],
-        "ignore_client_bandwidth":false,
-        "masquerade": "https://apple.com",
-        "tls": {
-            "enabled": true,
-            "alpn": [
-                "h3"
-            ],
-            "min_version":"1.3",
-            "max_version":"1.3",
-            "certificate_path": "/etc/sing-box/cert.pem",
-            "key_path": "/etc/sing-box/private.key"
+      "tag": "hysteria-DNS",
+      "type": "hysteria2",
+      "listen": "::",
+      "listen_port": 53535,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "tcp_fast_open": false,
+      "tcp_multi_path": true,
+      "users": [
+        {
+          "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
         }
-
-    },
-    {
-        "tag": "tuic-535",
-        "type": "tuic",
-        "listen": "::",
-        "listen_port": 535,
-        "sniff": true,
-        "sniff_override_destination": true,
-	"tcp_fast_open": false,
-        "tcp_multi_path": true,
-        "users": [
-          {
-            "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
-            "password": "kcptun"
-          }
+      ],
+      "ignore_client_bandwidth": false,
+      "masquerade": "https://apple.com",
+      "tls": {
+        "enabled": true,
+        "alpn": [
+          "h3"
         ],
-        "congestion_control": "bbr",
-	"zero_rtt_handshake": false,
-        "tls": {
-            "enabled": true,
-            "alpn": [
-                "h3"
-            ],
+        "min_version": "1.3",
+        "max_version": "1.3",
         "certificate_path": "/etc/sing-box/cert.pem",
         "key_path": "/etc/sing-box/private.key"
-       }
+      }
+    },
+
+    {
+      "tag": "tuic",
+      "type": "tuic",
+      "listen": "::",
+      "listen_port": 53,
+      "sniff": false,
+      "sniff_override_destination": false,
+      "tcp_fast_open": false,
+      "tcp_multi_path": true,
+      "users": [
+        {
+          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
+          "password": "kcptun"
+        }
+      ],
+      "congestion_control": "bbr",
+      "zero_rtt_handshake": false,
+      "tls": {
+        "enabled": true,
+        "alpn": [
+          "h3"
+        ],
+        "certificate_path": "/etc/sing-box/cert.pem",
+        "key_path": "/etc/sing-box/private.key"
+      }
     },
     {
-        "tag": "hysteria-UDP",
-        "type": "hysteria2",
-        "listen": "::",
-        "listen_port": 8443,
-        "sniff": false,
-        "sniff_override_destination": false,
-	"tcp_fast_open": false,
-        "tcp_multi_path": true,
-        "users": [
-            {
-                "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
-            }
+      "tag": "tuic-DNS",
+      "type": "tuic",
+      "listen": "::",
+      "listen_port": 535,
+      "sniff": false,
+      "sniff_override_destination": false,
+      "tcp_fast_open": false,
+      "tcp_multi_path": true,
+      "users": [
+        {
+          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
+          "password": "kcptun"
+        }
+      ],
+      "congestion_control": "bbr",
+      "zero_rtt_handshake": false,
+      "tls": {
+        "enabled": true,
+        "alpn": [
+          "h3"
         ],
-        "obfs": {
+        "certificate_path": "/etc/sing-box/cert.pem",
+        "key_path": "/etc/sing-box/private.key"
+      }
+    },
+    {
+      "tag": "tuic-zero",
+      "type": "tuic",
+      "listen": "::",
+      "listen_port": 853,
+      "sniff": false,
+      "sniff_override_destination": false,
+      "tcp_fast_open": false,
+      "tcp_multi_path": true,
+      "users": [
+        {
+          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
+          "password": "kcptun"
+        }
+      ],
+      "congestion_control": "bbr",
+      "zero_rtt_handshake": true,
+      "tls": {
+        "enabled": true,
+        "alpn": [
+          "h3"
+        ],
+        "certificate_path": "/etc/sing-box/cert.pem",
+        "key_path": "/etc/sing-box/private.key"
+      }
+    },
+    {
+      "tag": "hysteria-warp",
+      "type": "hysteria2",
+      "listen": "::",
+      "listen_port": 7844,
+      "sniff": false,
+      "sniff_override_destination": false,
+      "tcp_fast_open": false,
+      "tcp_multi_path": true,
+      "users": [
+        {
+          "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
+        }
+      ],
+      "obfs": {
         "type": "salamander",
         "password": "kcptun"
-        },
-        "ignore_client_bandwidth":false,
-        "masquerade": "https://apple.com",
-        "tls": {
-            "enabled": true,
-            "alpn": [
-                "h3"
-            ],
-            "min_version":"1.3",
-            "max_version":"1.3",
-            "certificate_path": "/etc/sing-box/cert.pem",
-            "key_path": "/etc/sing-box/private.key"
-        }
-
-    },
-    {
-        "tag": "tuic-UDP",
-        "type": "tuic",
-        "listen": "::",
-        "listen_port": 853,
-        "sniff": false,
-        "sniff_override_destination": false,
-	"tcp_fast_open": false,
-        "tcp_multi_path": true,
-        "users": [
-          {
-            "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
-            "password": "kcptun"
-          }
+      },
+      "ignore_client_bandwidth": false,
+      "masquerade": "https://apple.com",
+      "tls": {
+        "enabled": true,
+        "alpn": [
+          "h3"
         ],
-        "congestion_control": "bbr",
-	"zero_rtt_handshake": false,
-        "tls": {
-            "enabled": true,
-            "alpn": [
-                "h3"
-            ],
+        "min_version": "1.3",
+        "max_version": "1.3",
         "certificate_path": "/etc/sing-box/cert.pem",
         "key_path": "/etc/sing-box/private.key"
-       }
+      }
     }
-
-  ],
-
   ],
   "outbounds": [
-
     {
       "type": "direct",
       "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "warp-IPv4-out",
+      "detour": "wireguard-out",
+      "domain_strategy": "ipv4_only"
+    },
+    {
+      "type": "direct",
+      "tag": "warp-IPv6-out",
+      "detour": "wireguard-out",
+      "domain_strategy": "ipv6_only"
+    },
+    {
+      "type": "wireguard",
+      "tag": "wireguard-out",
+      "server": "162.159.193.10",
+      "server_port": 2408,
+      "local_address": [
+        "172.16.0.2/32",
+        "2606:4700:110:8a36:df92:102a:9602:fa18/128"
+      ],
+      "private_key": "YFYOAdbw1bKTHlNNi+aEjBM3BO7unuFC5rOkMRAz9XY=",
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": [
+        78,
+        135,
+        76
+      ],
+      "mtu": 1280
+    },
+    {
+      "type": "block",
+      "tag": "block"
     }
-
   ],
   "route": {
-
+    "rules": [
+      {
+        "inbound": [
+          "hysteria-warp"
+        ],
+        "outbound": "warp-IPv4-out"
+      },
+      {
+        "inbound": [
+          "vmess-warp"
+        ],
+        "outbound": "warp-IPv4-out"
+      }
+    ],
     "final": "direct"
-
-   },
-   "experimental": {
-      "cache_file": {
+  },
+  "experimental": {
+    "cache_file": {
       "enabled": true,
-      "path": "$work_dir/cache.db",
+      "path": "/etc/sing-box/cache.db",
       "cache_id": "mycacheid",
-      "store_fakeip": false
+      "store_fakeip": true
     }
   }
 }
