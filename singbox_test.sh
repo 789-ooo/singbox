@@ -566,8 +566,8 @@ cat > "${config_dir}" << EOF
     },
     
     {
+      "tag": "Shadowsocks",
       "type": "shadowsocks",
-      "tag": "ss-in",
       "listen": "::",
       "listen_port": 11111,
       "sniff": false,
@@ -587,8 +587,8 @@ cat > "${config_dir}" << EOF
       }
     },
     {
-      "type": "shadowsocks-dns",
-      "tag": "ss-in",
+      "tag": "Shadowsocks-DNS",
+      "type": "shadowsocks",
       "listen": "::",
       "listen_port": 33333,
       "sniff": true,
