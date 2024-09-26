@@ -564,6 +564,8 @@ cat > "${config_dir}" << EOF
         "key_path": "/etc/sing-box/private.key"
       }
     },
+
+
     
     {
       "tag": "Shadowsocks",
@@ -606,9 +608,52 @@ cat > "${config_dir}" << EOF
           "down_mbps": 72
         }
       }
+    },
+    {
+      "tag": "Shadowsocks-kcptun",
+      "type": "shadowsocks",
+      "listen": "::",
+      "listen_port": 111,
+      "sniff": false,
+      "sniff_override_destination": false,
+      "tcp_fast_open": false,
+      "tcp_multi_path": true,
+      "method": "aes-128-gcm",
+      "password": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "multiplex": {
+        "enabled": true,
+        "padding": false,
+        "brutal": {
+          "enabled": false,
+          "up_mbps": 72,
+          "down_mbps": 72
+        }
+      }
+    },
+    {
+      "tag": "Shadowsocks-kcptun-DNS",
+      "type": "shadowsocks",
+      "listen": "::",
+      "listen_port": 333,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "tcp_fast_open": false,
+      "tcp_multi_path": true,
+      "method": "aes-128-gcm",
+      "password": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "multiplex": {
+        "enabled": true,
+        "padding": false,
+        "brutal": {
+          "enabled": false,
+          "up_mbps": 72,
+          "down_mbps": 72
+        }
+      }
     }
 
 
+    
   ],
   "outbounds": [
     {
