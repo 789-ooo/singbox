@@ -212,7 +212,7 @@ cat > "${config_dir}" << EOF
       "sniff": false,
       "sniff_override_destination": false,
       "tcp_fast_open": false,
-      "tcp_multi_path": true,
+      "tcp_multi_path": false,
       "users": [
         {
           "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
@@ -243,7 +243,7 @@ cat > "${config_dir}" << EOF
       "sniff": true,
       "sniff_override_destination": true,
       "tcp_fast_open": false,
-      "tcp_multi_path": true,
+      "tcp_multi_path": false,
       "users": [
         {
           "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
@@ -277,7 +277,7 @@ cat > "${config_dir}" << EOF
       "sniff": false,
       "sniff_override_destination": false,
       "tcp_fast_open": false,
-      "tcp_multi_path": true,
+      "tcp_multi_path": false,
       "users": [
         {
           "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff"
@@ -297,7 +297,7 @@ cat > "${config_dir}" << EOF
       "sniff": true,
       "sniff_override_destination": true,
       "tcp_fast_open": false,
-      "tcp_multi_path": true,
+      "tcp_multi_path": false,
       "users": [
         {
           "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff"
@@ -317,7 +317,7 @@ cat > "${config_dir}" << EOF
       "sniff": false,
       "sniff_override_destination": false,
       "tcp_fast_open": false,
-      "tcp_multi_path": true,
+      "tcp_multi_path": false,
       "users": [
         {
           "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff"
@@ -340,7 +340,7 @@ cat > "${config_dir}" << EOF
       "sniff": false,
       "sniff_override_destination": false,
       "tcp_fast_open": false,
-      "tcp_multi_path": true,
+      "tcp_multi_path": false,
       "users": [
         {
           "password": "ffffffff-ffff-ffff-ffff-ffffffffffff"
@@ -367,7 +367,7 @@ cat > "${config_dir}" << EOF
       "sniff": true,
       "sniff_override_destination": true,
       "tcp_fast_open": false,
-      "tcp_multi_path": true,
+      "tcp_multi_path": false,
       "users": [
         {
           "password": "ffffffff-ffff-ffff-ffff-ffffffffffff"
@@ -394,7 +394,7 @@ cat > "${config_dir}" << EOF
       "sniff": false,
       "sniff_override_destination": false,
       "tcp_fast_open": false,
-      "tcp_multi_path": true,
+      "tcp_multi_path": false,
       "users": [
         {
           "password": "ffffffff-ffff-ffff-ffff-ffffffffffff"
@@ -426,7 +426,7 @@ cat > "${config_dir}" << EOF
       "sniff": false,
       "sniff_override_destination": false,
       "tcp_fast_open": false,
-      "tcp_multi_path": true,
+      "tcp_multi_path": false,
       "users": [
         {
           "password": "ffffffff-ffff-ffff-ffff-ffffffffffff"
@@ -460,7 +460,7 @@ cat > "${config_dir}" << EOF
       "sniff": false,
       "sniff_override_destination": false,
       "tcp_fast_open": false,
-      "tcp_multi_path": true,
+      "tcp_multi_path": false,
       "users": [
         {
           "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
@@ -488,7 +488,7 @@ cat > "${config_dir}" << EOF
       "sniff": false,
       "sniff_override_destination": false,
       "tcp_fast_open": false,
-      "tcp_multi_path": true,
+      "tcp_multi_path": false,
       "users": [
         {
           "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
@@ -516,7 +516,7 @@ cat > "${config_dir}" << EOF
       "sniff": false,
       "sniff_override_destination": false,
       "tcp_fast_open": false,
-      "tcp_multi_path": true,
+      "tcp_multi_path": false,
       "users": [
         {
           "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
@@ -544,7 +544,7 @@ cat > "${config_dir}" << EOF
       "sniff": false,
       "sniff_override_destination": false,
       "tcp_fast_open": false,
-      "tcp_multi_path": true,
+      "tcp_multi_path": false,
       "users": [
         {
           "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
@@ -575,7 +575,7 @@ cat > "${config_dir}" << EOF
       "sniff": false,
       "sniff_override_destination": false,
       "tcp_fast_open": false,
-      "tcp_multi_path": true,
+      "tcp_multi_path": false,
       "method": "aes-128-gcm",
       "password": "ffffffff-ffff-ffff-ffff-ffffffffffff",
       "multiplex": {
@@ -596,7 +596,7 @@ cat > "${config_dir}" << EOF
       "sniff": true,
       "sniff_override_destination": true,
       "tcp_fast_open": false,
-      "tcp_multi_path": true,
+      "tcp_multi_path": false,
       "method": "aes-128-gcm",
       "password": "ffffffff-ffff-ffff-ffff-ffffffffffff",
       "multiplex": {
@@ -617,7 +617,7 @@ cat > "${config_dir}" << EOF
       "sniff": false,
       "sniff_override_destination": false,
       "tcp_fast_open": false,
-      "tcp_multi_path": true,
+      "tcp_multi_path": false,
       "method": "aes-128-gcm",
       "password": "ffffffff-ffff-ffff-ffff-ffffffffffff",
       "multiplex": {
@@ -638,7 +638,7 @@ cat > "${config_dir}" << EOF
       "sniff": true,
       "sniff_override_destination": true,
       "tcp_fast_open": false,
-      "tcp_multi_path": true,
+      "tcp_multi_path": false,
       "method": "aes-128-gcm",
       "password": "ffffffff-ffff-ffff-ffff-ffffffffffff",
       "multiplex": {
