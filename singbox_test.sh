@@ -266,6 +266,48 @@ cat > "${config_dir}" << EOF
         }
       }
     },
+    {
+      "tag": "vless-CDN",
+      "type": "vless",
+      "listen": "::",
+      "listen_port": 2087,
+      "sniff": false,
+      "sniff_override_destination": false,
+      "tcp_fast_open": false,
+      "tcp_multi_path": false,
+      "users": [
+        {
+          "name": "VL-CDN",
+          "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+        }
+      ],
+      "transport": {
+        "type": "ws",
+        "path": "/vless",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "tag": "vless-CDN-DNS",
+      "type": "vless",
+      "listen": "::",
+      "listen_port": 2096,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "tcp_fast_open": false,
+      "tcp_multi_path": false,
+      "users": [
+        {
+          "name": "VL-CDN-DNS",
+          "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+        }
+      ],
+      "transport": {
+        "type": "ws",
+        "path": "/vless",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
 
 
 
