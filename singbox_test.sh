@@ -215,7 +215,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": false,
       "users": [
         {
-          "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
           "flow": "xtls-rprx-vision"
         }
       ],
@@ -246,7 +246,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": false,
       "users": [
         {
-          "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
           "flow": "xtls-rprx-vision"
         }
       ],
@@ -280,7 +280,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": false,
       "users": [
         {
-          "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
         }
       ],
       "transport": {
@@ -300,7 +300,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": false,
       "users": [
         {
-          "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
         }
       ],
       "transport": {
@@ -320,7 +320,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": false,
       "users": [
         {
-          "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
         }
       ],
       "transport": {
@@ -343,7 +343,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": false,
       "users": [
         {
-          "password": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+          "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
         }
       ],
       "ignore_client_bandwidth": false,
@@ -370,7 +370,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": false,
       "users": [
         {
-          "password": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+          "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
         }
       ],
       "ignore_client_bandwidth": false,
@@ -397,7 +397,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": false,
       "users": [
         {
-          "password": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+          "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
         }
       ],
       "obfs": {
@@ -429,7 +429,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": false,
       "users": [
         {
-          "password": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+          "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99"
         }
       ],
       "obfs": {
@@ -463,7 +463,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": false,
       "users": [
         {
-          "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
           "password": "kcptun"
         }
       ],
@@ -491,7 +491,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": false,
       "users": [
         {
-          "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
           "password": "kcptun"
         }
       ],
@@ -519,7 +519,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": false,
       "users": [
         {
-          "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
           "password": "kcptun"
         }
       ],
@@ -547,7 +547,7 @@ cat > "${config_dir}" << EOF
       "tcp_multi_path": false,
       "users": [
         {
-          "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+          "uuid": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
           "password": "kcptun"
         }
       ],
@@ -577,7 +577,7 @@ cat > "${config_dir}" << EOF
       "tcp_fast_open": false,
       "tcp_multi_path": false,
       "method": "aes-128-gcm",
-      "password": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
       "multiplex": {
         "enabled": true,
         "padding": false,
@@ -598,7 +598,7 @@ cat > "${config_dir}" << EOF
       "tcp_fast_open": false,
       "tcp_multi_path": false,
       "method": "aes-128-gcm",
-      "password": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
       "multiplex": {
         "enabled": true,
         "padding": false,
@@ -619,7 +619,7 @@ cat > "${config_dir}" << EOF
       "tcp_fast_open": false,
       "tcp_multi_path": false,
       "method": "aes-128-gcm",
-      "password": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
       "multiplex": {
         "enabled": true,
         "padding": false,
@@ -640,7 +640,7 @@ cat > "${config_dir}" << EOF
       "tcp_fast_open": false,
       "tcp_multi_path": false,
       "method": "aes-128-gcm",
-      "password": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "password": "aa02b8c0-8c21-43fe-8501-b0c499c99e99",
       "multiplex": {
         "enabled": true,
         "padding": false,
