@@ -208,7 +208,7 @@ cat > "${config_dir}" << EOF
       "tag": "vless",
       "type": "vless",
       "listen": "::",
-      "listen_port": 2053,
+      "listen_port": $vless_port,
       "sniff": false,
       "sniff_override_destination": false,
       "tcp_fast_open": false,
