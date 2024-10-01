@@ -236,6 +236,37 @@ cat > "${config_dir}" << EOF
         }
     },
     {
+        "tag": "vless-reality-DNS",
+        "type": "vless",
+        "listen": "::",
+        "listen_port": $vless_port,
+	"sniff": true,
+        "sniff_override_destination": true,
+	"tcp_fast_open": false,
+        "tcp_multi_path": true,
+        "users": [
+            {
+              "uuid": "$uuid",
+              "flow": "xtls-rprx-vision"
+            }
+        ],
+        "tls": {
+            "enabled": true,
+            "server_name": "apple.com",
+            "reality": {
+                "enabled": true,
+                "handshake": {
+                    "server": "apple.com",
+                    "server_port": 443
+                },
+                "private_key": "$private_key",
+                "short_id": [
+                  ""
+                ]
+            }
+        }
+    },
+    {
         "tag": "vmess-ws",
         "type": "vmess",
         "listen": "::",
