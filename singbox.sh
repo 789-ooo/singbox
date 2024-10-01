@@ -58,7 +58,7 @@ fi
 check_nginx() {
 if command -v nginx &>/dev/null; then
     if [ -f /etc/alpine-release ]; then
-        rc-service nginx status | grep -q "stoped" && yellow "not running" && return 1 || green "running" && return 0
+        rc-service nginx stat | grep -q "stoped" && yellow "not running" && return 1 || green "running" && return 0
     else 
         [ "$(systemctl is-active nginx)" = "active" ] && green "running" && return 0 || yellow "not running" && return 1
     fi
@@ -184,7 +184,7 @@ install_singbox() {
 
     # 生成自签名证书
     openssl ecparam -genkey -name prime256v1 -out "${work_dir}/private.key"
-    openssl req -new -x509 -days 3650 -key "${work_dir}/private.key" -out "${work_dir}/cert.pem" -subj "/US=apple.com"
+    openssl req -new -x509 -days 3650 -key "${work_dir}/private.key" -out "${work_dir}/cert.pem" -subj "/CN=apple.com"
 
    # 生成配置文件
 cat > "${config_dir}" << EOF
